@@ -1,13 +1,13 @@
     Neural Network to Recognize Handwritten Digits
 
-$\hspace*{8 mm}$ In this repository locate a project that describe in Python Neural Network to recognize handwritten digits using PyTorch library.
+In this repository locate a project that describe in Python Neural Network to recognize handwritten digits using PyTorch library.
 
-$\hspace*{8 mm}$ It's a neural net with one full connected layer and softmax activation function.
+It's a neural net with one full connected layer and softmax activation function.
 
 Structure of neural net:
 ![alt text](pic/net.png)
 
-$\hspace*{8 mm}$ The input is 784 = 28 $\cdot$ 28 neurons, each connected to one of each image. On the final layer with 10 neurons, one per digit. Accordingly, each of the 10 outputs takes the form of a linear combination of 784 inputs:
+The input is 784 = 28 $\cdot$ 28 neurons, each connected to one of each image. On the final layer with 10 neurons, one per digit. Accordingly, each of the 10 outputs takes the form of a linear combination of 784 inputs:
 
 $$y_i = \sum_{j = 0}^{783} w_{ij}\cdot x_j + b_i, $$
 
