@@ -5,6 +5,7 @@ In this repository locate a project that describe in Python Neural Network to re
 It's a neural net with one full connected layer and softmax activation function.
 
 Structure of neural net:
+
 ![alt text](pic/net.png)
 
 The input is 784 = 28 $\cdot$ 28 neurons, each connected to one of each image. On the final layer with 10 neurons, one per digit. Accordingly, each of the 10 outputs takes the form of a linear combination of 784 inputs:
@@ -19,7 +20,8 @@ To implement a neural network in hardware, you must first train the network in a
 
 The process of operation of a neural network begins with data transfer to a module implemented on programmable logic using the PYNQ distribution kit and the AXILite interface. The initial data processing, including reading the image, is carried out in Python. This image is then converted into the required format and transferred via the AXILite interface to the programmable logic. As part of the implementation of the neural network, the Q12.12 number representation format is used. The Q12.12 format refers to a fixed point, where a number is represented as an integer and a fractional part, each of which occupies 12 bits.
 
-A way to represent each pixel in an image.
+A way to represent each pixel in an image:
+
 ![alt text](pic/data.png)
 
 In programmable logic, data enters the fully connected layer module, where the weighted sum of the input signals is calculated.
@@ -28,7 +30,8 @@ The output values ​​of the fully connected layer are processed by the softma
 
 This probability value is then transmitted back to the processor system via the AXILite interface. The processor system processes the received data and displays the result on the screen, providing the user with the final output - the recognized digit.
 
-The operation of this neural network model.
+The operation of this neural network model:
+
 ![alt text](pic/work.png)
 
 Thus, the project can be reduced to the implementation of a matrix multiplier and search for the maximum element of the array. 
@@ -39,12 +42,15 @@ During the training process, the mean square error (MSE) between the model outpu
 live the degree of convergence of the model to the correct answers.
 
 Neural network training results:
+
 ![alt text](pic/learn_result.jpg)
 
 MSE:
+
 ![alt text](pic/MSE.png)
 
 Examples of the operation of this neural network on a test set of images are presented:
+
 ![alt text](pic/pic.png)
 
 To implement a neural network module based on the Xilinx ZYNQ platform. You need to create a block diagram. To do this, you need to create an IP core of a self-written block. Data transfer is carried out via the AXILite interface, packaged in the uP interface.
@@ -54,14 +60,17 @@ The central element of the IP block is the fully connected layer, developed on t
 The output array of the fully connected layer goes to the input of the activation function which, in order to reduce the computational load, instead of completely converting it into a probability distribution, the index of the element with the largest value is selected.
 
 Зroject block diagram:
+
 ![alt text](pic/block.png)
 
 Initially, the system was tested in simulation mode. Images were prepared and fed into the neural network input in test mode.
 
 Network testing result:
+
 ![alt text](pic/sim_6.png)
 
 Further testing was carried out using the Xilinx PYNQ platform. This device has been tested on various input sets.
 
 Results of testing a device on the Xilinx ZYNQ platform:
+
 ![alt text](pic/res.png)
