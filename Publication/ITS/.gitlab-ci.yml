@@ -1,0 +1,7 @@
+compile_pdf:
+  image: npetrovsky/latex-pscyr-drom:lastest
+  script:
+    - latexmk
+  artifacts:
+    paths:
+      - DD201.pdf

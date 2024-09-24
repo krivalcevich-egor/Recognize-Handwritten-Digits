@@ -1,0 +1,125 @@
+\NeedsTeXFormat{LaTeX2e} \ProvidesPackage{nal} \ProcessOptions
+\usepackage[utf8]{inputenc} 
+\usepackage[T2A]{fontenc}
+\usepackage[latin, russian]{babel}
+\usepackage{latexsym} 
+\usepackage[pdftex]{graphicx}
+\usepackage[left=3cm,right=2.0cm,top=1.5cm,bottom=2.7cm,bindingoffset=0cm]{geometry}
+\usepackage{enumitem} 
+\usepackage{tabularx} 
+\usepackage[T1]{fontenc}
+\usepackage[hyphens]{url}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{tabu}
+\usepackage{setspace}
+\usepackage{floatflt}
+\usepackage[center,small]{caption2}
+\renewcommand{\captionlabeldelim}{~--}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{makeidx}
+\usepackage{pgf,pgffor}
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}}
+\titleformat{\section}[block]{\vspace{-8pt}\normalsize\scshape\centering}{\thesection.}{1em}{\vspace{-5pt}} 
+\usepackage{fixltx2e}
+\usepackage{indentfirst}
+\makeatletter
+\parindent=0.8cm
+\widowpenalty = 10000
+\clubpenalty = 10000
+\postdisplaypenalty =100
+\pagestyle{plain}
+
+\setlist{nolistsep}
+\setlength{\headsep}{2pt}
+\setlength{\voffset}{1.2cm}
+
+\newcommand{\authorname}{Autor}
+
+\newcommand{\information}[4]{
+\foreach \autor in {#1}
+	{
+		\index{\autor}
+	}
+\begin{center}
+	{\normalsize #1}
+	\renewcommand{\authorname}{#1} \\
+	{\small #2} \\
+	{\small #3} \\
+	{\small E-mail: #4}
+\end{center}
+}
+
+\newcommand{\l@abcd}[2]{\noindent{\parbox[t]{\textwidth}{\raggedright #1\dotfill #2 \\[10pt]}}}
+\newcommand{\topic}[1]{
+    \begin{center}
+        {\bf{\Large\MakeUppercase{\chapter{#1}}
+            \addcontentsline{toc}{abcd}{\textbf{\authorname}\newline #1}}}
+    \end{center}
+}
+\newcommand{\annotation}[1]{
+	\leftskip=1cm\rightskip=1cm\it\small\noindent{#1}  
+	\normalsize\normalfont\leftskip=0cm \rightskip=0cm \indent }
+
+\newcommand{\items}{\item[\sffamily --]}
+
+\newcommand{\List}[1]{
+	%\vspace{-5pt}
+	\begin{itemize}
+		%\setlength{\itemsep}{-4pt}
+		\setlength{\topsep}{0pt} #1 
+	\end{itemize}
+	%\vspace{-5pt}
+	 }
+
+\newcommand{\topChapter}[1]{{\normalsize\normalfont \leftskip=0cm \rightskip=0cm\bf \noindent #1 \\[10pt]}}
+\newcommand{\content}[1]{\normalsize\normalfont\leftskip=0cm \rightskip=0cm \indent #1 }
+
+
+\newcounter{tmp}
+\newcommand{\ListReferences}[1]{
+\sloppy
+\setcounter{tmp}{1}
+\begin{list}{\arabic{tmp}.}{\usecounter{tmp}
+\setlength{\leftmargin}{0.6cm}} \setlength{\itemsep}{-4pt}
+\fontsize{8pt}{10pt}\selectfont #1
+\end{list}
+}
+
+
+\newcommand{\myTable}[2]{
+\vspace{-10pt} 
+\begin{table}[H]\small 
+\noindent
+\caption{#1}
+    \centering
+    \begin{tabularx}
+        #2
+    \end{tabularx}
+\end{table}
+\normalsize\normalfont\leftskip=0cm \rightskip=0cm\vspace{-10pt}
+}
+
+
+\newcommand{\image}[1]{
+\vspace{-8pt}
+\begin{figure}[H]
+\centering
+\includegraphics #1
+\end{figure}
+\vspace{-8pt}
+\normalsize\normalfont\leftskip=0cm\rightskip=0cm
+}
+
+\RequirePackage{wrapfig}
+\makeindex
+
+
+
+
+
