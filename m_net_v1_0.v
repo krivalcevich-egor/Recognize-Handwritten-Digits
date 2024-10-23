@@ -3,7 +3,7 @@
 module m_net_v1_0 #(
     parameter integer ID = 0,
   	parameter integer C_s_axi_DATA_WIDTH	= 32,
-	parameter integer C_s_axi_ADDR_WIDTH	= 4
+	parameter integer C_s_axi_ADDR_WIDTH	= 8
 )(
 
   //axi interface
@@ -48,31 +48,35 @@ wire          up_wreq_s;
 wire  [7:0]   up_waddr_s;
 wire  [31:0]  up_wdata_s;
 
-wire   [23:0]  Ain;
-wire   [0:0]  Bin;
-wire   [23:0]  Cout;
+wire  [23:0]  Ain;
+wire  [9:0]  Bin;
+wire  [23:0]  Cout;
+wire  reset_in;
 
 reg   [31:0]  up_Ain = 'd0;
 reg   [31:0]  up_Bin = 'd0;
 reg   [31:0]  up_Cout  = 'd0;
+reg   [31:0]  up_res  = 'd0;
 
 assign up_clk = s_axi_aclk;
-assign Ain = up_Ain[23 : 0];
-assign Bin = up_Bin[9 : 0];
+assign Ain = up_Ain[23:0];
+assign Bin = up_Bin[9:0];
+assign reset_in = up_res[0];
 
-always @(posedge up_clk) up_Cout[23 : 0] <= Cout;
+always @(posedge up_clk) up_Cout[23:0] <= Cout;
 
-nn #( 
-    .BITS(24), 
-    .WIDTH(784), 
-    .HEIGHT(10)
-) dut (
-    .clk(up_clk),
-    .reset(1),
-    .pixel_counter(Bin),
-    .input_pixel(Ain),
-    .predict_num(Cout)
-);
+nn #(  .BITS_INT(12) 
+       ,.BITS_FRC(12)
+       ,.WGHT_INT(6) 
+       ,.WGHT_FRC(1) 
+       ,.WIDTH(784)
+       ,.HEIGHT(10)
+) dut ( .clk(up_clk)
+       ,.reset(reset_in)
+       ,.pixel_counter(Bin)
+       ,.input_pixel(Ain)
+       ,.predict_num(Cout) 
+); 
 
 up_axi #(
   .AXI_ADDRESS_WIDTH(10))
@@ -112,12 +116,16 @@ always @(posedge up_clk) begin
   if (up_resetn == 1'b0) begin
     up_Ain <= 'd0;
 	up_Bin <= 'd0;
+	up_res <= 'd0;
   end else begin
     if ((up_wreq_s == 1'b1) && (up_waddr_s == 8'h03)) begin
       up_Ain <= up_wdata_s;
     end
 	if ((up_wreq_s == 1'b1) && (up_waddr_s == 8'h04)) begin
       up_Bin <= up_wdata_s;
+    end
+    if ((up_wreq_s == 1'b1) && (up_waddr_s == 8'h06)) begin
+      up_res <= up_wdata_s;
     end
   end
 end
@@ -150,8 +158,9 @@ always @(posedge up_clk) begin
         8'h01: up_rdata <= ID;
         8'h02: up_rdata <= CORE_MAGIC;
         8'h03: up_rdata <= up_Ain;
-		    8'h04: up_rdata <= up_Bin;
-		    8'h05: up_rdata <= up_Cout;
+		8'h04: up_rdata <= up_Bin;
+		8'h05: up_rdata <= up_Cout;
+		8'h06: up_rdata <= up_res;
         default: up_rdata <= 0;
       endcase
     end else begin
