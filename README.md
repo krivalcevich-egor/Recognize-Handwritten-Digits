@@ -74,3 +74,7 @@ Further testing was carried out using the Xilinx PYNQ platform. This device has 
 Results of testing a device on the Xilinx ZYNQ platform:
 
 ![alt text](pic/res.png)
+
+Testing the network on 10k images from MNSIT and the resulting confusion matrix:
+
+![alt text](pic/confusion_matrix.jpg)
