@@ -47,13 +47,13 @@ model.load_state_dict(torch.load('epoh_10000_data_10000.pth'))
 model.eval()
 
 # Save weights 
-filename = 'weights_epoh_10000_data_10000.txt'
-print("Model weights:")
-with open(filename, 'w') as file_object:
-    for name, param in model.state_dict().items():
-        print(name, param)
-        if 'weight' in name:
-            file_object.write(f'{param.numpy().tolist()}\n')
+# filename = 'weights_epoh_10000_data_10000.txt'
+# print("Model weights:")
+# with open(filename, 'w') as file_object:
+#     for name, param in model.state_dict().items():
+#         print(name, param)
+#         if 'weight' in name:
+#             file_object.write(f'{param.numpy().tolist()}\n')
 
 # Evaluate with one image
 images, labels = next(iter(valloader))

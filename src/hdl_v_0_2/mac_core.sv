@@ -7,7 +7,7 @@
 // 2nd element is current weight from weights string.
 //////////////////////////////////////////////////////////////////////////////////
 
-(* use_dsp = "yes" *) 
+//(* use_dsp = "yes" *) 
 module mac_core #( 
     parameter int BITS = 24, // bit depth
     parameter int WIDTH = 784 // size of array

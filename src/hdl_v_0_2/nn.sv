@@ -56,7 +56,7 @@ generate // create 10 mac core module for processing image in parallel
 endgenerate   
                       
 // Design for test
-assign MAC0_out = mac_out[0];                      
+assign MAC0_out = { {8{mac_out[0][BITS-1]}}, mac_out[0]};                      
 assign MEM0_out = weight_data[0];
 assign CNT_out = counter;
 

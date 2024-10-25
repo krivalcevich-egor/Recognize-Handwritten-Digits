@@ -7,7 +7,7 @@ entity MUL_N is
 	 generic (N:natural:=16);
     port ( A : in  STD_LOGIC_VECTOR (N-1 downto 0);
            B : in  STD_LOGIC_VECTOR (N-1 downto 0);
-           --P : out  STD_LOGIC_VECTOR (2*N-2 downto 0)	-- full multiplier
+--           P : out  STD_LOGIC_VECTOR (2*N-1 downto 0)	-- full multiplier
 			  P : out STD_LOGIC_VECTOR(N-1 downto 0)			-- half of output bits is needed
 			  );
 end MUL_N;
@@ -29,7 +29,7 @@ component HA
 end component;
 signal ab,s,c: abij;
 signal c_out: std_logic_vector(N-1 downto 0);
-signal p_out: std_logic_vector(2*(N-1) downto 0);
+signal p_out: std_logic_vector(2*N-1 downto 0);
 begin
 
 row: for i in 0 to N-1 generate
@@ -74,8 +74,10 @@ mul_end:
 		    ad: ADD1 port map (A=>s(N-1)(i),B=>c_out(i-1),Ci=>c(N-1)(i),S=>p_out(N-1+i),Co=>c_out(i));  
 			end generate;
 	 end generate;
+p_out(2*N-1) <= c_out(N-1); 
 --P<=p_out;						-- full integer multiplier
 --P<=p_out(2*(N-1) downto N-1);-- half of product fractional multiplier
-P<=p_out(N-1 downto 0);-- half of product fractional multiplier
+--P<=p_out(N-1 downto 0);-- half of product fractional multiplier
+P<=p_out(N+(N/2)-1 downto N/2);-- half of product
 end Behavioral;
 
