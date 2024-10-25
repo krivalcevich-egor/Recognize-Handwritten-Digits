@@ -1,4 +1,4 @@
-    Neural Network to Recognize Handwritten Digits
+# FPGA Neural Network to Recognize Handwritten Digits
 
 In this repository locate a project that describe in Python Neural Network to recognize handwritten digits using PyTorch library.
 
