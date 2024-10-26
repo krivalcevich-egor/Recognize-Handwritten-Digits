@@ -1,6 +1,7 @@
 import numpy as np
 import torch
 import torch.nn as nn
+import os
 
 
 def to_fixed_point(value, integer_bits, fraction_bits):
@@ -49,14 +50,21 @@ def save_weights(model_path, integer_bits, fraction_bits):
         hex_weights.append(hex_row)
 
         # Write each row of weights to a separate .mem file
-        with open(f'weight_{i}.mem', 'w') as f:
+        
+        path = f"ROM_files\mem\\format_q{integer_bits}_{fraction_bits}\\"
+        if not os.path.exists(path):
+            os.makedirs(path)
+        filename = path + f'weight_q{integer_bits}_{fraction_bits}_N{i}.mem'
+        with open(filename, 'w') as f:
             for hex_value in hex_row:
                 f.write(f"{hex_value}\n")
 
 
 # Model path and bits number
 model_path = 'epoh_10000_data_10000.pth'
-integer_bits = 12  
-fraction_bits = 12  
+integer_bits = 6  
+# fraction_bits = 16  
 
-save_weights(model_path, integer_bits, fraction_bits)
+fraction_bits = range(1,16)
+for f_bits in fraction_bits:
+    save_weights(model_path, integer_bits, f_bits)
