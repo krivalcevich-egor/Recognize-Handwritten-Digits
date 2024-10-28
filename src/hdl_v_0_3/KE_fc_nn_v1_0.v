@@ -46,7 +46,7 @@
 //local parameters
 localparam [31:0] CORE_VERSION            = {16'h0000,     /* MAJOR */
                                               8'h01,       /* MINOR */
-                                              8'h03};      /* PATCH */ // 0.1.3
+                                              8'h04};      /* PATCH */ // 0.1.4
 localparam [31:0] CORE_MAGIC              = 32'h47465550;    // PUFG
 
 
@@ -88,7 +88,8 @@ end
 
 assign nn_en = ((~sync[2]) & sync[1]);
 
-nn #(   .BITS(24)
+nn #(  .WGHT_INT(6)   // integer part 
+       ,.WGHT_FRC(16) // fractional part
        ,.WIDTH(784)
        ,.HEIGHT(10)
 ) dut ( .clk(up_clk)
