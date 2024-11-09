@@ -1,6 +1,6 @@
 \babel@toc {russian}{}\relax 
 \beamer@sectionintoc {1}{Введение}{3}{0}{1}
 \beamer@sectionintoc {2}{Обучение нейронной сети}{6}{0}{2}
-\beamer@sectionintoc {3}{Аппаратная реализация нейронной сети}{8}{0}{3}
+\beamer@sectionintoc {3}{Аппаратная реализация нейронной сети}{9}{0}{3}
 \beamer@sectionintoc {4}{Использование PYNQ для прототипирования и тестирования нейронной сети}{12}{0}{4}
-\beamer@sectionintoc {5}{Эксперимент и результаты}{15}{0}{5}
+\beamer@sectionintoc {5}{Эксперимент и результаты}{14}{0}{5}

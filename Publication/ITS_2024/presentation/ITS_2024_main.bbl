@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.3 $
+% $ biblatex bbl format version 3.2 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -16,54 +16,5 @@
   {}
 \endgroup
 
-
-\refsection{0}
-  \datalist[entry]{nty/global//global/global/global}
-    \entry{watkins2018image}{inproceedings}{}{}
-      \name{author}{4}{}{%
-        {{hash=16e9d011607f330ca17b0b4b5a544ade}{%
-           family={Watkins},
-           familyi={W\bibinitperiod},
-           given={Yijing},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=8cfa0859cc556330d813d1b6a2f26b7f}{%
-           family={Iaroshenko},
-           familyi={I\bibinitperiod},
-           given={Oleksandr},
-           giveni={O\bibinitperiod}}}%
-        {{hash=c79e29d3ec35bf150ed9254de208ac97}{%
-           family={Sayeh},
-           familyi={S\bibinitperiod},
-           given={Mohammad},
-           giveni={M\bibinitperiod}}}%
-        {{hash=f9c80921e76709446d0b53317741a2e9}{%
-           family={Kenyon},
-           familyi={K\bibinitperiod},
-           given={Garrett},
-           giveni={G\bibinitperiod}}}%
-      }
-      \list{organization}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{afeb780ce686b1f86251c67dd782b5ce}
-      \strng{fullhash}{6bf5cf0a68b355fb72800404fc0c17a1}
-      \strng{fullhashraw}{6bf5cf0a68b355fb72800404fc0c17a1}
-      \strng{bibnamehash}{afeb780ce686b1f86251c67dd782b5ce}
-      \strng{authorbibnamehash}{afeb780ce686b1f86251c67dd782b5ce}
-      \strng{authornamehash}{afeb780ce686b1f86251c67dd782b5ce}
-      \strng{authorfullhash}{6bf5cf0a68b355fb72800404fc0c17a1}
-      \strng{authorfullhashraw}{6bf5cf0a68b355fb72800404fc0c17a1}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{2018 IEEE Southwest Symposium on Image Analysis and Interpretation (SSIAI)}
-      \field{title}{Image compression: Sparse coding vs. bottleneck autoencoders}
-      \field{year}{2018}
-      \field{pages}{17\bibrangedash 20}
-      \range{pages}{4}
-    \endentry
-  \enddatalist
-\endrefsection
 \endinput
 

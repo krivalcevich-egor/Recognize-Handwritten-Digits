@@ -1,18 +1,15 @@
 %===============================================================================
 \begin{frame}[t]
 \frametitle{Описание эксперимента}
-% \begin{itemize}
-%     \item Набор данных CIFAR-10 (60 тыс. RGB-изображения $32 \times 32$)
-%     \item В кодере использовалась функция активации ReLU, в декодере -- логистический сигмоид
-%     \item Обучались автокодировщики с различным размером внутреннего слоя
-%      $N_{hidden} = \{2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048\}$
-%     \item Инициализация весов выполнялась методом Хе
-%     \item Целевая функция -- $MSE$
-%     \item Оптимизация производилось с использованием алгоритма Adam 
-%     (скорость обучения $\eta =10^{−3}$, число эпох -- 50, размер батча -- 256)
-%     \item Для оценки качества декодирования изображений использовались 
-%     метрики $MSE$, $PSNR$ и $SIMM$
-% \end{itemize}
+\begin{itemize}
+    \item Набор данных MNSIT (10 тыс. изображений рукописных цифр $28 \times 28$)
+    \item Данные подаются последовательно из процессорной системы
+    \item Результаты группируются в виде матриц спутывания
+    \item Проведено 15 тестов с различными разрядностями весовых коэффициентов (от 2 до 16)
+    \item Составлен график зависимости точности от разрядности
+    \item Разложены классы весовых коэффициентов на битовые плоскости
+    \item Проанализированы аппаратные затраты
+\end{itemize}
 
 \end{frame}
 
@@ -20,22 +17,17 @@
 \begin{frame}[t]
 \frametitle{Результаты}
 \begin{columns}
-\column[t]{0.33\textwidth}
-\begin{block}{MSE}
+\hspace{5mm}
+\column[t]{0.45\textwidth}
+\begin{block}{Confusion matrix}
     \vspace{3mm}
-    % \includegraphics[width = \textwidth]{MSE_result_vert.jpg} 
+    \includegraphics[width = 0.815\textwidth]{pics/cm_6q5.jpg} 
 \end{block}
  
-\column[t]{0.33\textwidth}
-\begin{block}{PSNR}
+\column[t]{0.45\textwidth}
+\begin{block}{Accurancy and hardware cost}
     \vspace{3mm}
-    % \includegraphics[width = \textwidth]{PSNR_result_vert.jpg} 
-\end{block}
-
-\column[t]{0.33\textwidth}
-\begin{block}{SIMM}
-    \vspace{3mm}
-    % \includegraphics[width = \textwidth]{SIMM_result_vert.jpg} 
+    \includegraphics[width = 0.9\textwidth]{pics/Acc_LUTs_FFs.jpg} 
 \end{block}
 
 \end{columns}
@@ -43,51 +35,61 @@
 
 %===============================================================================
 \begin{frame}[t]
-\frametitle{Результат работы автокодировщика RAE-2048}
-\centering
-% \includegraphics[height = 0.8\textheight]{RAE_h2048_results_worsed_MSE.jpg} 
+\frametitle{Разложение на битовые плоскости}
+\begin{columns}
+    \hspace{5mm}
+    \column[t]{0.3\textwidth}
+    \begin{block}{Весовой класс 3}
+        \vspace{3mm}
+        \includegraphics[width = 0.85\textwidth]{pics/output1.png} 
+    \end{block}
+     
+    \column[t]{0.7\textwidth}
+    \begin{block}{Битовые плоскости}
+        \vspace{3mm}
+        \includegraphics[width = 0.85\textwidth]{pics/output.png} 
+    \end{block}
+\end{columns}
 \end{frame}
 
 %===============================================================================
 \begin{frame}[t]
-    \frametitle{Результат работы автокодировщика QAE-2048}
+    \frametitle{Аппаратные затраты}
     \centering
-    % \includegraphics[height = 0.8\textheight]{QAE_h2048_results_worsed_MSE.jpg} 
-\end{frame}
-
-%===============================================================================
-\begin{frame}[t]
-\frametitle{Сравнение полученных результатов}
-\begin{itemize}
-    \item Полученные автокодировщики на основе кватернионной НС сравнивались с 
-    другими вещественнозначным автокодировщиком, имеющим архитектуру 
-    <<бутылочное горлышко>>\footcite{watkins2018image}.
-    \item Автокодировщик\footnotemark[1], использует НС с 
-    двумя слоями: первый сверхточный, а второй полносвязный и 
-    обеспечивает степень сжатия 2:1, т.е. внутренний слой содержал 
-    в два раза меньше элементов, чем входной и выходной.
-    \item У автокодировщика\footnotemark[1]  
-    индекс структурной схожести (SIMM) равен {\bf 0,905}. 
-    \item Полученный в данной работе автокодировщик QAE-1024 обеспечивает 
-    сжатие 3:1 и имеет SIMM равный \textbf{0,922}.
-\end{itemize}
-
+    \begin{table}[h]
+        \centering
+        % \caption{Resource Utilization}
+        \begin{tabular}{|>{\raggedright\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|}
+            \hline
+            Block variant & Number of blocks & Available & Utility, \% \\
+            \hline
+            LUT as logic & 2180 & 17600 & 12.39 \\
+            \hline
+            LUT as memory & 60 & 6000 & 1 \\
+            \hline
+            Flip Flop & 862 & 35200 & 2.45 \\
+            \hline
+            BRAM & 5 & 60 & 8.33 \\
+            \hline
+            DSP & 0 & 80 & 0 \\
+            \hline
+            BUFG & 1 & 32 & 3.13 \\
+            \hline
+        \end{tabular}
+    \end{table}
 \end{frame}
 
 %===============================================================================
 \begin{frame}[t]
 \frametitle{Выводы}
 \begin{itemize}
-    \item Рассмотренный вычислительный эксперимент на основе 
-    полносвязного автокодировщика показывает, что представление 
-    скоррелированных данных, таких как цветные RGB-изображения, 
-    в алгебре кватернионов позволяет лучше учитывать характер 
-    исходных данных. 
-    \item Предложенные автокодировщики, имеющие различную степень 
-    сжатия, позволяют получить более высокие значения объективных 
-    характеристик декодирования цветных изображений по сравнению с 
-    аналогичными вещественнозначными автокодировщиками (PSNR в среднем 
-    выше на 3,85 дБ, SSIM на 0,18).
+    \item Рассмотренный эксперимент на основе НС прямого распространения с
+    полносвязным слоем показывает, что формат представление 
+    весовых данных существенно влияет на точность определения 
+    до 5 битной разрядности. Дальнейшее увеличение разрядности 
+    не несет значительных изменений в точности.
+    \item Предложенная структура НС показывает, что при увеличении
+    разрядности наблюдается линейный рост в потреблении LUT и FF блоков FPGA.
 \end{itemize}
 \end{frame}
 
