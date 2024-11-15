@@ -1,11 +1,14 @@
 %===============================================================================
 \begin{frame}[t]
     \frametitle{Структурная схема проекта}
-    \begin{block}{\centering Архитектура проекта}
+    \begin{block}{} %{\centering Архитектура проекта}
         \vspace{1mm}
         \centering \includegraphics[width = 0.9\textwidth]{pics/struct.png}
-        % \includesvg[height = 0.4\textheight]{basic_AE.svg}        
-    \end{block}   
+        % \includesvg[height = 0.4\textheight]{basic_AE.svg}    
+        \begin{itemize}\small
+            \item Подключение PL блока к PS осуществляется с помощью AXI4-Lite и uP интерфейсов.
+        \end{itemize}     
+    \end{block}  
 \end{frame}
 %===============================================================================
 

@@ -1,24 +1,36 @@
 %===============================================================================
 \begin{frame}[t]
-\frametitle{Аппаратная реализация нейронной сети}
-\begin{block}{\centering Основные блоки}                
-    \begin{itemize}\small
-        \item Register file
-        \item Counter
-        \item Fully connected layer
-        \item Max ind           
-    \end{itemize}
-\end{block}
+\frametitle{Структурная схема IP-блока}
+\begin{columns}
+    % \hspace{5mm}
+    \column[t]{0.4\textwidth}
+    \begin{block}{\centering Основные блоки}                
+        \begin{itemize}\small
+            \item Регистровый файл
+            \item Счётчик
+            \item Полносвязный слой
+            \item Блок поиска максимального индекса         
+        \end{itemize}
+    \end{block}
+     
+    \column[t]{0.6\textwidth}
+    \begin{block}{\centering Структурная схема IP-блока}
+        \vspace{3mm}
+        \centering \includegraphics[height = 0.65\textheight]{pics/ip.png}
+    \end{block}
+\end{columns}
+
+
 \end{frame}
 %===============================================================================
-\begin{frame}[t]
-    \frametitle{Структурная схема IP-блока}
-    \begin{block}{}
-        \vspace{1mm}
-        \centering \includegraphics[height = 0.75\textheight]{pics/ip.png}
-        % \includesvg[height = 0.4\textheight]{basic_AE.svg}        
-    \end{block}   
-\end{frame}
+% \begin{frame}[t]
+%     \frametitle{Структурная схема IP-блока}
+%     \begin{block}{}
+%         \vspace{1mm}
+%         \centering \includegraphics[height = 0.75\textheight]{pics/ip.png}
+%         % \includesvg[height = 0.4\textheight]{basic_AE.svg}        
+%     \end{block}   
+% \end{frame}
 
 %===============================================================================
 

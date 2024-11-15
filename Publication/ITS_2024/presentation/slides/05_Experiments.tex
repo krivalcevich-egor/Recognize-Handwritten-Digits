@@ -17,15 +17,17 @@
 \begin{frame}[t]
 \frametitle{Результаты}
 \begin{columns}
-\hspace{5mm}
+% \hspace{5mm}
 \column[t]{0.45\textwidth}
-\begin{block}{Confusion matrix}
+% \begin{center}
+\begin{block}{ \centering Матрица спутывания}
     \vspace{3mm}
     \includegraphics[width = 0.815\textwidth]{pics/cm_6q5.jpg} 
 \end{block}
+% \end{center}
  
 \column[t]{0.45\textwidth}
-\begin{block}{Accurancy and hardware cost}
+\begin{block}{\centering Точность и затраты блоков LUT/FF}
     \vspace{3mm}
     \includegraphics[width = 0.9\textwidth]{pics/Acc_LUTs_FFs.jpg} 
 \end{block}
@@ -39,13 +41,15 @@
 \begin{columns}
     \hspace{5mm}
     \column[t]{0.3\textwidth}
-    \begin{block}{Весовой класс 3}
+    \centering 
+    \begin{block}{\centering{Весовой класс 3}}
         \vspace{3mm}
         \includegraphics[width = 0.85\textwidth]{pics/output1.png} 
     \end{block}
      
     \column[t]{0.7\textwidth}
-    \begin{block}{Битовые плоскости}
+    \centering 
+    \begin{block}{\centering{Битовые плоскости}}
         \vspace{3mm}
         \includegraphics[width = 0.85\textwidth]{pics/output.png} 
     \end{block}
@@ -58,10 +62,10 @@
     \centering
     \begin{table}[h]
         \centering
-        % \caption{Resource Utilization}
+        \caption{Аппаратные затраты для 5 битного представления коэффициентов}
         \begin{tabular}{|>{\raggedright\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|}
             \hline
-            Block variant & Number of blocks & Available & Utility, \% \\
+            Тип блока & Использовано & Доступно & Соотношение, \% \\
             \hline
             LUT as logic & 2180 & 17600 & 12.39 \\
             \hline
@@ -69,7 +73,7 @@
             \hline
             Flip Flop & 862 & 35200 & 2.45 \\
             \hline
-            BRAM & 5 & 60 & 8.33 \\
+            RAMB18  & 10 & 120 & 8.33 \\
             \hline
             DSP & 0 & 80 & 0 \\
             \hline
