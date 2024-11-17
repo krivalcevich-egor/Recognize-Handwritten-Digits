@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.18)  15 NOV 2024 13:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.18)  17 NOV 2024 10:57
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1846,7 +1846,21 @@ put line 132.
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/n' will be
 (Font)              scaled to size 12.0pt on input line 132.
 
-(./ITS_2024_main.aux)
+(./ITS_2024_main.aux
+LaTeX Font Info:    Trying to load font information for T2A+FiraSans-OsF on inp
+ut line 24.
+LaTeX Font Info:    No file T2AFiraSans-OsF.fd. on input line 24.
+LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 2
+4.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd
+File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+
+LaTeX Font Warning: Font shape `T2A/FiraSans-OsF/m/n' undefined
+(Font)              using `T2A/cmr/m/n' instead on input line 24.
+
+)
 \openout1 = `ITS_2024_main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
@@ -1868,12 +1882,6 @@ LaTeX Font Info:    ... okay on input line 132.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 132.
 LaTeX Font Info:    ... okay on input line 132.
 LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 132.
-LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 1
-32.
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd
-File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-)
 LaTeX Font Info:    ... okay on input line 132.
 
 *geometry* driver: auto-detecting
@@ -1999,13 +2007,6 @@ Package svg Warning: No version of Inkscape was detected by invoking
 
 \c@mv@tabular=\count574
 \c@mv@boldtabular=\count575
-LaTeX Font Info:    Trying to load font information for T2A+FiraSans-OsF on inp
-ut line 132.
-LaTeX Font Info:    No file T2AFiraSans-OsF.fd. on input line 132.
-
-LaTeX Font Warning: Font shape `T2A/FiraSans-OsF/m/n' undefined
-(Font)              using `T2A/cmr/m/n' instead on input line 132.
-
 LaTeX Info: Redefining \th on input line 132.
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
@@ -2054,12 +2055,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--134
 
  []
 
-<./pics//bsuir-logo.pdf, id=13, 371.3875pt x 224.84pt>
+<./pics//bsuir-logo.pdf, id=33, 371.3875pt x 224.84pt>
 File: ./pics//bsuir-logo.pdf Graphic file (type pdf)
 <use ./pics//bsuir-logo.pdf>
 Package pdftex.def Info: ./pics//bsuir-logo.pdf  used on input line 134.
 (pdftex.def)             Requested size: 61.09494pt x 36.98866pt.
-<./pics//its_logo.jpg, id=14, 48.18pt x 20.9583pt>
+<./pics//its_logo.jpg, id=34, 48.18pt x 20.9583pt>
 File: ./pics//its_logo.jpg Graphic file (type jpg)
 <use ./pics//its_logo.jpg>
 Package pdftex.def Info: ./pics//its_logo.jpg  used on input line 134.
@@ -2097,7 +2098,7 @@ thkerncmss.
 ]) [6
 
 ] (./slides/02_NN_train.tex
-<pics/nn.png, id=62, 286.47829pt x 148.58711pt>
+<pics/nn.png, id=80, 286.47829pt x 148.58711pt>
 File: pics/nn.png Graphic file (type png)
 <use pics/nn.png>
 Package pdftex.def Info: pics/nn.png  used on input line 17.
@@ -2110,22 +2111,22 @@ Overfull \hbox (435.24408pt too wide) detected at line 17
 [7
 
  <./pics/nn.png>]
-<pics/MSE.png, id=71, 455.20062pt x 235.88126pt>
-File: pics/MSE.png Graphic file (type png)
-<use pics/MSE.png>
-Package pdftex.def Info: pics/MSE.png  used on input line 46.
-(pdftex.def)             Requested size: 200.35847pt x 103.82405pt.
+<pics/loss.png, id=89, 618.6312pt x 386.6445pt>
+File: pics/loss.png Graphic file (type png)
+<use pics/loss.png>
+Package pdftex.def Info: pics/loss.png  used on input line 45.
+(pdftex.def)             Requested size: 200.35847pt x 125.22139pt.
  [8
 
- <./pics/MSE.png>]) [9
+ <./pics/loss.png>]) [9
 
 ]
 (./slides/03_FPGA_implementation.tex
-<pics/ip.png, id=89, 392.61882pt x 332.9238pt>
+<pics/ip.png, id=106, 395.60599pt x 344.34245pt>
 File: pics/ip.png Graphic file (type png)
 <use pics/ip.png>
 Package pdftex.def Info: pics/ip.png  used on input line 24.
-(pdftex.def)             Requested size: 187.20879pt x 158.74524pt.
+(pdftex.def)             Requested size: 182.37936pt x 158.74524pt.
 
 Overfull \vbox (4.28pt too high) detected at line 24
  []
@@ -2135,7 +2136,7 @@ Overfull \vbox (4.28pt too high) detected at line 24
  <./pics/ip.png>]) [11
 
 ] (./slides/04_PYNQ_testing.tex
-<pics/struct.png, id=104, 522.753pt x 174.6525pt>
+<pics/struct.png, id=120, 522.753pt x 174.6525pt>
 File: pics/struct.png Graphic file (type png)
 <use pics/struct.png>
 Package pdftex.def Info: pics/struct.png  used on input line 12.
@@ -2147,12 +2148,12 @@ Package pdftex.def Info: pics/struct.png  used on input line 12.
 ] (./slides/05_Experiments.tex [14
 
 ]
-<pics/cm_6q5.jpg, id=125, 345.81195pt x 281.853pt>
+<pics/cm_6q5.jpg, id=140, 345.81195pt x 281.853pt>
 File: pics/cm_6q5.jpg Graphic file (type jpg)
 <use pics/cm_6q5.jpg>
 Package pdftex.def Info: pics/cm_6q5.jpg  used on input line 36.
 (pdftex.def)             Requested size: 163.29263pt x 133.09453pt.
-<pics/Acc_LUTs_FFs.jpg, id=126, 345.81195pt x 250.41554pt>
+<pics/Acc_LUTs_FFs.jpg, id=141, 345.81195pt x 250.41554pt>
 File: pics/Acc_LUTs_FFs.jpg Graphic file (type jpg)
 <use pics/Acc_LUTs_FFs.jpg>
 Package pdftex.def Info: pics/Acc_LUTs_FFs.jpg  used on input line 36.
@@ -2160,12 +2161,12 @@ Package pdftex.def Info: pics/Acc_LUTs_FFs.jpg  used on input line 36.
  [15
 
  <./pics/cm_6q5.jpg> <./pics/Acc_LUTs_FFs.jpg>]
-<pics/output1.png, id=132, 363.5181pt x 314.3745pt>
+<pics/output1.png, id=147, 363.5181pt x 314.3745pt>
 File: pics/output1.png Graphic file (type png)
 <use pics/output1.png>
 Package pdftex.def Info: pics/output1.png  used on input line 57.
 (pdftex.def)             Requested size: 113.53918pt x 98.18901pt.
-<pics/output.png, id=133, 836.8866pt x 430.7292pt>
+<pics/output.png, id=148, 836.8866pt x 430.7292pt>
 File: pics/output.png Graphic file (type png)
 <use pics/output.png>
 Package pdftex.def Info: pics/output.png  used on input line 57.
@@ -2205,31 +2206,17 @@ Overfull \hbox (3.59294pt too wide) in paragraph at lines 84--84
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-Package rerunfilecheck Warning: File `ITS_2024_main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `ITS_2024_main.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  9698AB84DE54A9E362F247F9DFED41BA;1483.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                ITS_2024_main
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `ITS_2024_main.out' has not changed.
+(rerunfilecheck)             Checksum: 9698AB84DE54A9E362F247F9DFED41BA;1483.
 Package logreq Info: Writing requests to 'ITS_2024_main.run.xml'.
 \openout1 = `ITS_2024_main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 52842 strings out of 478268
- 1243614 string characters out of 5846347
- 2093528 words of memory out of 5000000
- 70049 multiletter control sequences out of 15000+600000
+ 52848 strings out of 478268
+ 1243683 string characters out of 5846347
+ 2093606 words of memory out of 5000000
+ 70055 multiletter control sequences out of 15000+600000
  494197 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,13n,122p,1138b,1677s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2247,18 +2234,10 @@ ive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/20
 22/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on ITS_2024_main.pdf (18 pages, 2535697 bytes).
+Output written on ITS_2024_main.pdf (18 pages, 2519505 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 148 compressed objects within 2 object streams
+ 235 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
  42 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
-
-texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on ITS_2024_main.pdf (18 pages, 2535697 bytes).
-PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 148 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

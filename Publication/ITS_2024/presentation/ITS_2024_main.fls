@@ -1925,9 +1925,6 @@ INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/fira/OT1FiraSans-OsF.fd
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/fira/OT1FiraSans-OsF.fd
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/fira/OT1FiraSans-OsF.fd
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fira/FiraSans-Regular-osf-ot1.tfm
-INPUT ./ITS_2024_main.aux
-INPUT ITS_2024_main.aux
-INPUT ITS_2024_main.aux
 OUTPUT ITS_2024_main.aux
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd
@@ -2141,11 +2138,11 @@ INPUT ./pics/nn.png
 INPUT pics/nn.png
 INPUT ./pics/nn.png
 INPUT ./pics/nn.png
-INPUT ./pics/MSE.png
-INPUT ./pics/MSE.png
-INPUT pics/MSE.png
-INPUT ./pics/MSE.png
-INPUT ./pics/MSE.png
+INPUT ./pics/loss.png
+INPUT ./pics/loss.png
+INPUT pics/loss.png
+INPUT ./pics/loss.png
+INPUT ./pics/loss.png
 INPUT ./slides/03_FPGA_implementation.tex
 INPUT ./slides/03_FPGA_implementation.tex
 INPUT ./slides/03_FPGA_implementation.tex

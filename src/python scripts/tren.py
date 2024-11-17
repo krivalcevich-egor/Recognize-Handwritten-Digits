@@ -17,8 +17,8 @@ trainset = datasets.MNIST('PATH_TO_STORE_TRAINSET', download=True, train=True, t
 valset = datasets.MNIST('PATH_TO_STORE_TESTSET', download=True, train=False, transform=transform)
 
 # Create dataloaders
-trainloader = torch.utils.data.DataLoader(trainset, batch_size=100, shuffle=True)
-valloader = torch.utils.data.DataLoader(valset, batch_size=100, shuffle=True)
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=10000, shuffle=True)
+valloader = torch.utils.data.DataLoader(valset, batch_size=10000, shuffle=True)
 
 dataiter = iter(trainloader)
 images, labels = next(dataiter)
@@ -39,18 +39,18 @@ print(model)
 criterion = nn.CrossEntropyLoss()  # Use CrossEntropyLoss which includes softmax
 optimizer = optim.SGD(model.parameters(), lr=0.003, momentum=0.9)
 
-# Track MSE
+# Track MSE and loss
 mse_list = []
+loss_list = []
 
 # Training the network
-epochs = 10
+epochs = 10000
 time0 = time()
 
 for e in range(epochs):
     running_loss = 0
     mse_loss = 0
     for images, labels in trainloader:
-        # Flatten MNIST images into a 784 long vector
         images = images.view(images.shape[0], -1)
     
         # Training pass
@@ -62,7 +62,7 @@ for e in range(epochs):
         # Calculate MSE
         mse_loss += torch.mean((output - nn.functional.one_hot(labels, num_classes=10).float())**2).item()
         
-        # This is where the model learns by backpropagating
+        # This is where the model learns by back propagating
         loss.backward()
         
         # And optimizes its weights here
@@ -70,13 +70,22 @@ for e in range(epochs):
         
         running_loss += loss.item()
     
+    loss_list.append(running_loss / len(trainloader))
     mse_list.append(mse_loss / len(trainloader))
     print(f"Epoch {e+1} - Training loss: {running_loss/len(trainloader)}")
     
 print(f"\nTraining Time (in minutes) = {(time()-time0)/60}")
 
+# Convert lists to numpy arrays
+loss_array = np.array(loss_list)
+mse_array = np.array(mse_list)
+
+# Save arrays to .npy files
+np.save('loss_values.npy', loss_array)
+np.save('mse_values.npy', mse_array)
+
 # Save the model
-torch.save(model.state_dict(), 'epoh_10_data_100.pth')
+torch.save(model.state_dict(), 'for_presentation.pth')
 
 # Plot MSE
 plt.figure(figsize=(10, 5))
