@@ -2,7 +2,7 @@
 \begin{frame}[t]
 \frametitle{Описание эксперимента}
 \begin{itemize}
-    \item Набор данных MNSIT (10 тыс. изображений рукописных цифр $28 \times 28$)
+    \item Набор данных MNIST (10 тыс. изображений рукописных цифр $28 \times 28$)
     \item Данные подаются последовательно из процессорной системы
     \item Результаты группируются в виде матриц спутывания
     \item Проведено 15 тестов с различными разрядностями весовых коэффициентов (от 2 до 16)
@@ -37,27 +37,6 @@
 
 %===============================================================================
 \begin{frame}[t]
-\frametitle{Разложение на битовые плоскости}
-\begin{columns}
-    \hspace{5mm}
-    \column[t]{0.3\textwidth}
-    \centering 
-    \begin{block}{\centering{Весовой класс 3}}
-        \vspace{3mm}
-        \includegraphics[width = 0.85\textwidth]{pics/output1.png} 
-    \end{block}
-     
-    \column[t]{0.7\textwidth}
-    \centering 
-    \begin{block}{\centering{Битовые плоскости}}
-        \vspace{3mm}
-        \includegraphics[width = 0.85\textwidth]{pics/output.png} 
-    \end{block}
-\end{columns}
-\end{frame}
-
-%===============================================================================
-\begin{frame}[t]
     \frametitle{Аппаратные затраты}
     \centering
     \begin{table}[h]
@@ -77,11 +56,34 @@
             \hline
             DSP & 0 & 80 & 0 \\
             \hline
-            BUFG & 1 & 32 & 3.13 \\
-            \hline
+            % BUFG & 1 & 32 & 3.13 \\
+            % \hline
         \end{tabular}
     \end{table}
 \end{frame}
+
+%===============================================================================
+\begin{frame}[t]
+\frametitle{Разложение на битовые плоскости}
+\begin{columns}
+    \hspace{5mm}
+    \column[t]{0.5\textwidth}
+    \centering 
+    \begin{block}{\centering{Битовые плоскости}}
+        \vspace{3mm}
+        \centering\includegraphics[height = 0.6\textheight]{pics/output1.png} 
+    \end{block}
+     
+    \column[t]{0.5\textwidth}
+    \centering 
+    \begin{block}{\centering{Зануление части битовых плоскостей}}
+        \vspace{3mm}
+        \centering\includegraphics[height = 0.6\textheight]{pics/output.png} 
+    \end{block}
+\end{columns}
+\end{frame}
+
+
 
 %===============================================================================
 \begin{frame}[t]

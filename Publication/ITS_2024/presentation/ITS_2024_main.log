@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.18)  17 NOV 2024 10:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.18)  20 NOV 2024 00:22
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2098,11 +2098,11 @@ thkerncmss.
 ]) [6
 
 ] (./slides/02_NN_train.tex
-<pics/nn.png, id=80, 286.47829pt x 148.58711pt>
-File: pics/nn.png Graphic file (type png)
-<use pics/nn.png>
-Package pdftex.def Info: pics/nn.png  used on input line 17.
-(pdftex.def)             Requested size: 311.6695pt x 161.65746pt.
+<pics/nn_2.png, id=80, 289.99542pt x 153.88692pt>
+File: pics/nn_2.png Graphic file (type png)
+<use pics/nn_2.png>
+Package pdftex.def Info: pics/nn_2.png  used on input line 17.
+(pdftex.def)             Requested size: 311.6695pt x 165.4017pt.
 
 Overfull \hbox (435.24408pt too wide) detected at line 17
 [][][] [][][][][][][][][] [][][][][][][] 
@@ -2110,7 +2110,7 @@ Overfull \hbox (435.24408pt too wide) detected at line 17
 
 [7
 
- <./pics/nn.png>]
+ <./pics/nn_2.png>]
 <pics/loss.png, id=89, 618.6312pt x 386.6445pt>
 File: pics/loss.png Graphic file (type png)
 <use pics/loss.png>
@@ -2122,28 +2122,28 @@ Package pdftex.def Info: pics/loss.png  used on input line 45.
 
 ]
 (./slides/03_FPGA_implementation.tex
-<pics/ip.png, id=106, 395.60599pt x 344.34245pt>
-File: pics/ip.png Graphic file (type png)
-<use pics/ip.png>
-Package pdftex.def Info: pics/ip.png  used on input line 24.
-(pdftex.def)             Requested size: 182.37936pt x 158.74524pt.
+<pics/ip_2.png, id=106, 396.13596pt x 286.86372pt>
+File: pics/ip_2.png Graphic file (type png)
+<use pics/ip_2.png>
+Package pdftex.def Info: pics/ip_2.png  used on input line 24.
+(pdftex.def)             Requested size: 219.21129pt x 158.74524pt.
 
 Overfull \vbox (4.28pt too high) detected at line 24
  []
 
 [10
 
- <./pics/ip.png>]) [11
+ <./pics/ip_2.png>]) [11
 
 ] (./slides/04_PYNQ_testing.tex
-<pics/struct.png, id=120, 522.753pt x 174.6525pt>
-File: pics/struct.png Graphic file (type png)
-<use pics/struct.png>
-Package pdftex.def Info: pics/struct.png  used on input line 12.
-(pdftex.def)             Requested size: 400.71695pt x 133.87788pt.
+<pics/struct_2.png, id=120, 527.86008pt x 183.75851pt>
+File: pics/struct_2.png Graphic file (type png)
+<use pics/struct_2.png>
+Package pdftex.def Info: pics/struct_2.png  used on input line 12.
+(pdftex.def)             Requested size: 400.71695pt x 139.50089pt.
  [12
 
- <./pics/struct.png>]) [13
+ <./pics/struct_2.png>]) [13
 
 ] (./slides/05_Experiments.tex [14
 
@@ -2161,36 +2161,36 @@ Package pdftex.def Info: pics/Acc_LUTs_FFs.jpg  used on input line 36.
  [15
 
  <./pics/cm_6q5.jpg> <./pics/Acc_LUTs_FFs.jpg>]
-<pics/output1.png, id=147, 363.5181pt x 314.3745pt>
-File: pics/output1.png Graphic file (type png)
-<use pics/output1.png>
-Package pdftex.def Info: pics/output1.png  used on input line 57.
-(pdftex.def)             Requested size: 113.53918pt x 98.18901pt.
-<pics/output.png, id=148, 836.8866pt x 430.7292pt>
-File: pics/output.png Graphic file (type png)
-<use pics/output.png>
-Package pdftex.def Info: pics/output.png  used on input line 57.
-(pdftex.def)             Requested size: 264.92096pt x 136.3508pt.
-
-Overfull \hbox (6.83684pt too wide) detected at line 57
-[]  [][] [][][][][][][][][] [][][][][][][] 
- []
-
-[16
-
- <./pics/output1.png> <./pics/output.png>]
-Overfull \hbox (3.2624pt too wide) in paragraph at lines 84--84
+Overfull \hbox (3.2624pt too wide) in paragraph at lines 63--63
  []|\T2A/FiraSans-OsF/b/n/12 Использовано| 
  []
 
 
-Overfull \hbox (3.59294pt too wide) in paragraph at lines 84--84
+Overfull \hbox (3.59294pt too wide) in paragraph at lines 63--63
  []|\T2A/FiraSans-OsF/b/n/12 Соотношение, 
+ []
+
+[16
+
+]
+<pics/output1.png, id=152, 265.9536pt x 281.853pt>
+File: pics/output1.png Graphic file (type png)
+<use pics/output1.png>
+Package pdftex.def Info: pics/output1.png  used on input line 84.
+(pdftex.def)             Requested size: 138.27231pt x 146.53693pt.
+<pics/output.png, id=153, 265.9536pt x 281.853pt>
+File: pics/output.png Graphic file (type png)
+<use pics/output.png>
+Package pdftex.def Info: pics/output.png  used on input line 84.
+(pdftex.def)             Requested size: 138.27231pt x 146.53693pt.
+
+Overfull \hbox (6.83685pt too wide) detected at line 84
+[]  [][] [][][][][][][][][] [][][][][][][] 
  []
 
 [17
 
-] [18
+ <./pics/output1.png> <./pics/output.png>] [18
 
 ])
 \tf@nav=\write9
@@ -2213,9 +2213,9 @@ Package logreq Info: Writing requests to 'ITS_2024_main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 52848 strings out of 478268
- 1243683 string characters out of 5846347
- 2093606 words of memory out of 5000000
+ 52849 strings out of 478268
+ 1243731 string characters out of 5846347
+ 2092578 words of memory out of 5000000
  70055 multiletter control sequences out of 15000+600000
  494197 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2234,7 +2234,7 @@ ive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/20
 22/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on ITS_2024_main.pdf (18 pages, 2519505 bytes).
+Output written on ITS_2024_main.pdf (18 pages, 3855421 bytes).
 PDF statistics:
  235 PDF objects out of 1000 (max. 8388607)
  164 compressed objects within 2 object streams
